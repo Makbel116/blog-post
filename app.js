@@ -11,6 +11,9 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
 
+app.get("/",function(req,res){
+    res.render("home")
+})
 app.listen(3000,function(req,res){
     console.log("server is listening.")
 })
