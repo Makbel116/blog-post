@@ -30,6 +30,18 @@ app.get("/contact", function (req, res) {
   res.render("contact",{contactContent:contactContent});
 });
 
+app.get("/compose",function(req,res){
+  res.render("compose")
+})
+app.post("/compose",function(req,res){
+let compose_obj={
+  title:req.body.title,
+  post:req.body.post
+};
+  posts.push(compose_obj);
+  res.redirect("/");
+})
+
 
 app.listen(3000, function (req, res) {
   console.log("server is listening.");
