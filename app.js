@@ -44,15 +44,15 @@ app.post("/compose", function (req, res) {
   res.redirect("/");
 });
 
-app.get("/post/:posts",function(req,res){
-  let requstsParam=_.kebabCase(req.params.posts);
- posts.forEach(post => {
-  let postTitle=_.kebabCase(post.title);
-  if (postTitle===requstsParam){
-    res.render("post",{postTitle:postTitle,postContent:post.post})
-  }
- });
-})
+app.get("/post/:posts", function (req, res) {
+  let requstsParam = _.kebabCase(req.params.posts);
+  posts.forEach((post) => {
+    let postTitle = _.kebabCase(post.title);
+    if (postTitle === requstsParam) {
+      res.render("post", { postTitle: postTitle, postContent: post.post });
+    }
+  });
+});
 app.listen(3000, function (req, res) {
   console.log("server is listening.");
 });
