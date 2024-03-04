@@ -49,7 +49,7 @@ app.get("/post/:posts", function (req, res) {
   posts.forEach((post) => {
     let postTitle = _.kebabCase(post.title);
     if (postTitle === requstsParam) {
-      res.render("post", { postTitle: postTitle, postContent: post.post });
+      res.render("post", { postTitle: post.title, postContent: post.post});
     }
   });
 });
